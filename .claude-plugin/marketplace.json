@@ -1,0 +1,17 @@
+{
+  "name": "bjorn",
+  "owner": {
+    "name": "Björn",
+    "url": "https://heybjorn.com"
+  },
+  "metadata": {
+    "description": "Björn, the language-learning app, in Claude."
+  },
+  "plugins": [
+    {
+      "name": "bjorn",
+      "source": "./plugins/bjorn",
+      "description": "Add words to your Björn decks, make topics, send texts to Read and see your progress, from any chat."
+    }
+  ]
+}
