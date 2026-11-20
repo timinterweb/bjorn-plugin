@@ -36,3 +36,7 @@ The plugin connects Claude to Björn's MCP server at `https://mcp.heybjorn.com/m
 ## Support
 
 Write to hey@heybjorn.com, or use "How's it going?" in Björn's sidebar.
+
+## License
+
+The plugin's files are MIT licensed (LICENSE). The Björn name, logo and icon aren't covered by that license.
