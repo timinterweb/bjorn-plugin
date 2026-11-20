@@ -5,5 +5,5 @@ set -euo pipefail
 cd "$(dirname "$0")/.."
 mkdir -p dist
 rm -f dist/bjorn-openai.zip
-(cd openai && zip -qrX ../dist/bjorn-openai.zip plugin.json mcp.json skills assets)
+(cd openai && zip -qrX ../dist/bjorn-openai.zip plugin.json mcp.json LICENSE skills assets)
 unzip -l dist/bjorn-openai.zip
