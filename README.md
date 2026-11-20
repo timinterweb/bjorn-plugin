@@ -2,10 +2,11 @@
 
 [Björn](https://heybjorn.com) is a language-learning app: flashcards, writing, conversations, reading and listening, in one account that remembers what you know. This plugin connects your Björn to Claude, so you can ask Claude to:
 
-- **Add words to Björn.** "Add *la cuenta* and *el camarero* to Björn" saves them as flashcards in Quick Add. Name a deck or topic to put them there instead: "…to my restaurant deck".
+- **Add words to Björn.** "Add *bestämma* to Björn" saves it in that language's Quick Add. A word in your own language goes to every language you learn, translated into each. Name a language or a deck to narrow it: "…in French", "…to my cooking deck".
+- **Make a story.** "Make a story of this in Björn" has Björn write a story about what you've been talking about in every language you learn, each at your level there and with the words you're practising, ready in Read and Listen. Ask for an article, or name a language, to change it.
 - **Make a topic.** "Make a Björn topic about moving to Lyon for work" creates a deck with goals for your level and starter words.
-- **Send a text to Read.** "Put this article in Björn", or "write me a short story with my words and send it to Björn". In Björn's Read and Listen you can tap any word to understand it and have the text read aloud.
-- **See your Björn.** "What's in my Björn?" or "How am I doing?" shows your languages, level, streak, cards and decks.
+- **Send a text to Read.** "Put this article in Björn" puts it in Read and Listen, where you can tap any word to understand it and have it read aloud.
+- **See your Björn.** "What's in my Björn?" or "How am I doing?" shows each language you learn with its level, your streak, cards and decks.
 
 Claude only changes your Björn when you ask it to.
 
@@ -26,11 +27,11 @@ Either way, a Björn page opens: sign in with the account you learn with and cli
 
 ## What it costs
 
-Looking up a missing meaning and making a topic use your monthly practice in Björn, as they do in the app. Everything else is free.
+Looking up a missing meaning, writing a story and making a topic use your monthly practice in Björn, as they do in the app. Everything else is free.
 
 ## Privacy
 
-The plugin connects Claude to Björn's MCP server at `https://mcp.heybjorn.com/mcp`. It sees your Björn data only when Claude calls one of its four tools, and it keeps nothing itself. See Björn's [privacy policy](https://heybjorn.com/privacy) and [terms](https://heybjorn.com/terms).
+The plugin connects Claude to Björn's MCP server at `https://mcp.heybjorn.com/mcp`. It sees your Björn data only when Claude calls one of its tools, and it keeps nothing itself. See Björn's [privacy policy](https://heybjorn.com/privacy) and [terms](https://heybjorn.com/terms).
 
 ## Support
 

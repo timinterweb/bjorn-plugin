@@ -1,7 +1,7 @@
 {
   "name": "bjorn",
-  "version": "0.1.0",
-  "description": "Add words to your Björn decks, make topics, send texts to Read and see your progress, from any chat.",
+  "version": "0.2.0",
+  "description": "Add words to your Björn decks in every language you learn, make stories and topics, send texts to Read and see your progress, from any chat.",
   "author": {
     "name": "Björn",
     "url": "https://heybjorn.com"
@@ -11,5 +11,10 @@
   "icon": "./icon.png",
   "privacyPolicyUrl": "https://heybjorn.com/privacy",
   "termsOfServiceUrl": "https://heybjorn.com/terms",
-  "keywords": ["language learning", "flashcards", "vocabulary", "reading"]
+  "keywords": [
+    "language learning",
+    "flashcards",
+    "vocabulary",
+    "reading"
+  ]
 }

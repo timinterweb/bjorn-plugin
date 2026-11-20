@@ -1,17 +1,23 @@
 ---
 name: bjorn
-description: Use when the learner asks to add or save words or phrases to Björn or one of their Björn decks, to make a topic in Björn, to put a text or a story in Björn's Read, or asks what's in their Björn or how their language learning is going.
+description: Use when the learner asks, in any words or language, to add or save words or phrases to Björn or to their cards, flashcards, decks, Quick Add or vocabulary; to make a story or article in Björn or its Read or Listen; to make a topic in Björn; to put a text in Björn's Read; or asks what's in their Björn or how their learning of a language is going.
 ---
 
 # Björn
 
-Björn is the learner's language-learning app. The Björn connector acts on their Björn, only when they ask.
+Björn is the learner's language-learning app. They may learn several languages, each at its own level. The Björn connector acts on their Björn only when they ask. They don't have to name Björn when what they ask for can only mean it; when it isn't clear, ask once whether they want it in Björn. `my_bjorn` lists their languages with codes and levels; call it first when you don't know them yet in this conversation.
 
-- **Adding words**: `add_words`. Words go to Quick Add unless the learner names a deck or topic in their request; never choose one yourself. If Björn answers that there's no such deck, ask whether to use one of the decks it lists or make a new one, and pass `new_deck` only after they say so. Give each word's meaning in the learner's help language when you know it; a missing one is looked up in Björn and uses their monthly practice.
-- **Topics**: `create_topic`, when they ask for a topic or a deck about something in their life. Use their own words for the name. It uses their monthly practice.
-- **Reading**: `send_to_read`, when they ask to put a text in Björn or read it there, including a story they asked you to write in the language they're learning. Write it at their level (from `my_bjorn`).
-- **Their Björn**: `my_bjorn`, for what they learn, their level, streak, cards and decks, and the deck names `add_words` needs.
+- **Adding words**: `add_words`, when they ask to save words or phrases to Björn or to their cards, flashcards, decks, Quick Add or vocabulary. A request to remember something that isn't plainly about learning words isn't one: ask first. Each word goes in with its language.
+  - A word written in one of the languages they learn goes to that language only.
+  - A word written in their help language goes to every language they learn: one entry per language, as it's said in that language.
+  - When they name a language, only that language, translated into it when needed.
+  - Words go to that language's Quick Add. Only when they name a deck or topic, pass its name as `deck`, in the language that deck is in. Never choose one yourself. If Björn answers that there's no such deck, ask whether to use one of the decks it lists or make a new one, and pass `new_deck` only after they say so.
+  - Give each word's meaning in their help language when you know it; a missing one is looked up in Björn and uses their monthly practice.
+- **Stories and articles**: `make_story`, when they ask for a story or article in Björn, or in its Read or Listen, about something, often what you've been talking about. Björn writes it in every language they learn, each at its level and with words they're practising, unless they name languages. Each one uses their monthly practice. When they ask for a story without naming Björn, Read or Listen, write it in the chat as usual and offer to make it in Björn too.
+- **Topics**: `create_topic`, when they ask for a topic or a deck about something in their life, in Björn or among their decks; if it could mean something else, ask first. In the language Björn is on unless they name one. Use their own words for the name. It uses their monthly practice.
+- **Texts to read**: `send_to_read`, when they ask to put a text they have in Björn, or in its Read or Listen, with the language it's written in.
+- **Their Björn**: `my_bjorn`, for their languages, levels, streak, cards and decks.
 
-Don't add words, make topics or send texts the learner didn't ask for. Link to Björn with the `url` the tools return.
+Don't add words, make stories or topics, or send texts the learner didn't ask for. Link to Björn with the `url` fields the tools return.
 
 If the Björn tools aren't available, the learner needs to connect Björn: in Claude, open the Björn plugin's Connectors tab and connect, or run `/mcp` in Claude Code. They sign in with their Björn account.
