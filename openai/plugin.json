@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "description": "Björn is a language-learning app with flashcards, writing, conversations, reading and listening, in one account that remembers what you know. This plugin connects your Björn to ChatGPT, so you can ask it, in any language, to:\n- Add words or phrases to your Björn decks. A word in a language you learn goes to that language; a word in your own language goes to every language you learn, translated.\n- Have Björn write a story or article at your level in each language you learn, ready to read and listen to in Björn.\n- Make a topic: a deck about something in your life, with goals and starter words.\n- Put a text in Björn's Read and Listen, where you can tap any word to understand it.\n- See what's in your Björn and how you're doing.\nIt only changes your Björn when you ask. You need a Björn account (free at heybjorn.com) with a language picked.",
   "author": {
-    "name": "Hey Björn!",
+    "name": "Björn",
     "email": "hey@heybjorn.com",
     "url": "https://heybjorn.com"
   },
