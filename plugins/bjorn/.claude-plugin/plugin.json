@@ -16,5 +16,7 @@
     "flashcards",
     "vocabulary",
     "reading"
-  ]
+  ],
+  "supportUrl": "https://app.heybjorn.com/support",
+  "documentationUrl": "https://github.com/timinterweb/bjorn-plugin#readme"
 }

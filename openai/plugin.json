@@ -1,0 +1,107 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "bjorn",
+  "version": "1.0.0",
+  "description": "Björn is a language-learning app with flashcards, writing, conversations, reading and listening, in one account that remembers what you know. This plugin connects your Björn to ChatGPT, so you can ask it, in any language, to:\n- Add words or phrases to your Björn decks. A word in a language you learn goes to that language; a word in your own language goes to every language you learn, translated.\n- Have Björn write a story or article at your level in each language you learn, ready to read and listen to in Björn.\n- Make a topic: a deck about something in your life, with goals and starter words.\n- Put a text in Björn's Read and Listen, where you can tap any word to understand it.\n- See what's in your Björn and how you're doing.\nIt only changes your Björn when you ask. You need a Björn account (free at heybjorn.com) with a language picked.",
+  "author": {
+    "name": "Björn",
+    "email": "hey@heybjorn.com",
+    "url": "https://heybjorn.com"
+  },
+  "homepage": "https://heybjorn.com",
+  "repository": "https://github.com/timinterweb/bjorn-plugin",
+  "license": "MIT",
+  "keywords": [
+    "language learning",
+    "flashcards",
+    "vocabulary",
+    "reading",
+    "stories"
+  ],
+  "extensions": {
+    "com.openai": {
+      "onboardingSkill": "./skills/bjorn/SKILL.md",
+      "interface": {
+        "displayName": "Björn",
+        "shortDescription": "Learn languages from any chat",
+        "longDescription": "Björn is a language-learning app with flashcards, writing, conversations, reading and listening, in one account that remembers what you know. This plugin connects your Björn to ChatGPT, so you can ask it, in any language, to:\n- Add words or phrases to your Björn decks. A word in a language you learn goes to that language; a word in your own language goes to every language you learn, translated.\n- Have Björn write a story or article at your level in each language you learn, ready to read and listen to in Björn.\n- Make a topic: a deck about something in your life, with goals and starter words.\n- Put a text in Björn's Read and Listen, where you can tap any word to understand it.\n- See what's in your Björn and how you're doing.\nIt only changes your Björn when you ask. You need a Björn account (free at heybjorn.com) with a language picked.",
+        "category": "Education & Research",
+        "capabilities": [
+          "Add words and phrases to your Björn decks, in each language you learn",
+          "Have Björn write a story or article at your level, ready in Read and Listen",
+          "Make a topic: a deck about something in your life, with goals and starter words",
+          "Put a text in Björn's Read and Listen",
+          "See your languages, levels, streak, cards and decks"
+        ],
+        "websiteURL": "https://heybjorn.com",
+        "supportURL": "https://app.heybjorn.com/support",
+        "privacyPolicyURL": "https://heybjorn.com/privacy",
+        "termsOfServiceURL": "https://heybjorn.com/terms",
+        "defaultPrompt": [
+          "What's in my Björn?",
+          "Add the new words from this chat to Björn",
+          "Make a short story of this in Björn"
+        ],
+        "brandColor": "#0005FF",
+        "brandColorDark": "#4A65FF",
+        "logo": "./assets/logo.png",
+        "composerIcon": "./assets/icon.png"
+      },
+      "review": {
+        "demo_recording_url": "",
+        "commerce": false,
+        "test_cases": {
+          "positive": [
+            {
+              "description": "See what's in the learner's Björn.",
+              "prompt": "What's in my Björn?",
+              "tools_triggered": "my_bjorn",
+              "expected_behavior": "Calls my_bjorn and sums up the learner's language and level (Swedish, A1), streak, cards and decks, with links to Björn."
+            },
+            {
+              "description": "Save a word in the language the learner learns: it goes to that language's Quick Add.",
+              "prompt": "Add the Swedish word bestämma (to decide) to Björn.",
+              "tools_triggered": "add_words",
+              "expected_behavior": "Adds bestämma, meaning to decide, to the Swedish Quick Add deck and confirms it, or says it was already a card."
+            },
+            {
+              "description": "Words in the learner's own language go to every language they learn, translated.",
+              "prompt": "Add breakfast and to wait to my Björn.",
+              "tools_triggered": "my_bjorn, add_words",
+              "expected_behavior": "Checks the learner's languages with my_bjorn, then adds the Swedish words frukost and vänta, with English meanings, to Swedish Quick Add and confirms."
+            },
+            {
+              "description": "Björn writes a story at the learner's level.",
+              "prompt": "Make a short story in Björn about a rainy morning at a market.",
+              "tools_triggered": "make_story",
+              "expected_behavior": "Björn writes a Swedish story at A1 about a rainy morning at a market. The reply gives its title and links to it in Read and Listen."
+            },
+            {
+              "description": "Put a text the learner has in Björn to read.",
+              "prompt": "Put this in Björn so I can read it: Jag dricker kaffe på morgonen. Sedan går jag till jobbet. Det regnar ofta i Göteborg.",
+              "tools_triggered": "send_to_read",
+              "expected_behavior": "Adds the Swedish text to Read and Listen and replies with links to it."
+            }
+          ],
+          "negative": [
+            {
+              "description": "A reminder isn't about learning words: no Björn tool should run, and bread must not be added to Björn. The assistant answers normally.",
+              "prompt": "Remind me to buy bread tomorrow."
+            },
+            {
+              "description": "A story without Björn, Read or Listen named: the assistant writes it in the chat and may offer to make it in Björn, without calling make_story.",
+              "prompt": "Write me a short story about a dragon."
+            },
+            {
+              "description": "Nothing to do with the learner's Björn: no Björn tool should run.",
+              "prompt": "What's the weather in Stockholm today?"
+            }
+          ]
+        }
+      },
+      "publication": {
+        "release_notes": "First release: add words to your decks in every language you learn, have Björn write stories and articles at your level, make topics, send texts to Read and Listen, and see your progress."
+      }
+    }
+  }
+}
